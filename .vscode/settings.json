@@ -1,4 +1,6 @@
 {
     "files.autoSave": "afterDelay",
-    "files.eol": "\n"
+    "files.eol": "\n",
+    "editor.fontSize": 16,
+    "editor.fontFamily": "HackGen35, Consolas, 'Courier New', monospace"
 }
