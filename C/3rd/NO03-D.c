@@ -3,7 +3,6 @@
 #include <time.h>
 #include <math.h>
 
-
 double rand_0to1()
 {
     double r = rand() / (double)RAND_MAX; // 0以上1未満の乱数を生成
