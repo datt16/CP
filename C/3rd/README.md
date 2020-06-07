@@ -14,8 +14,8 @@ degree ==> radian の変換関数を作る
 また、それを用いてdegreeの三角関数を作る
 ```c
 double deg2rad(double deg);
-double deg_sin_(double deg);
-double deg_sin_(double deg);
+double deg_sin(double deg);
+double deg_cos(double deg);
 ```
 
 ## No.03-D
