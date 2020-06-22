@@ -1,10 +1,41 @@
+/*
+  10i”‚ğ2i”‚É•ÏŠ·
+*/
+
 #include <stdio.h>
+
 int main(void)
 {
-    char x = 3;
-    char *p = &x; // å‚ç…§å‹
-    printf("x = %d, *p = %d\n", x, *p);
-    printf("&x = %p, p = %p\n", &x, p);
-    printf("&p = %p\n", &p);
+    char retry; //‚à‚¤ˆê“x‚â‚é‚©‚ÌŠm”F//
+    char n = 'n';
+
+    do
+    {          //‚à‚¤ˆê“x‚â‚é‚½‚ß‚ÌŒJ‚è•Ô‚µ//
+        int j; //10i”‚ğ“ü‚ê‚é//
+        int z; //keke//
+        int i[32];
+        ;
+
+        printf("10i”(0`9999)‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢:");
+        scanf_s("%d", &j);
+        if (j >= 0 && j <= 9999)
+        {
+            for (z = 0; j > 0; z++)
+            {
+                i[z] = j % 2;
+                j = j / 2;
+            }
+            while (z > 0)
+                printf("%1d", i[--z]);
+            printf("\n");
+        }
+        else
+        {
+            puts("³‚µ‚¢’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+        }
+        printf("I—¹‚µ‚Ü‚·‚©H y/n");
+        scanf_s(" %c", &retry);
+    } while (retry == n);
+
     return 0;
 }
