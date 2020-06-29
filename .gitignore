@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+C/code.c
+C/code1.c
+*Test*.txt
