@@ -2,6 +2,7 @@
     "files.autoSave": "afterDelay",
     "files.eol": "\n",
     "editor.fontSize": 16,
-    "editor.fontFamily": "HackGen35, Consolas, 'Courier New', monospace"
+    "editor.fontFamily": "HackGen35, Consolas, 'Courier New', monospace",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe"
     
 }
