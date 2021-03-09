@@ -112,20 +112,12 @@ inline string reversed(const string &s)
 int main()
 {
     init();
-    int x, y, b;
-    cin >> x >> y;
-
-    bool ans = 0;
-    FOR(i, 0, x + 1)
-    {
-        b = x - i;
-        if (2 * i + 4 * b == y)
-            ans = 1;
-    }
-    if (ans)
-        cout << "Yes\n";
+    int w, a, b;
+    cin >> w >> a >> b;
+    int ans = max(b, a) - (min(a, b) + w);
+    if(ans < 0)
+        cout << 0 << endl;
     else
-        cout << "No\n";
-
+        cout << ans << endl;
     return 0;
 }

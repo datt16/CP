@@ -112,20 +112,27 @@ inline string reversed(const string &s)
 int main()
 {
     init();
-    int x, y, b;
-    cin >> x >> y;
+    int n;
+    cin >> n;
+    VI p(n, 0);
+    FOR(i, 0, n)
+    cin >> p[i];
 
-    bool ans = 0;
-    FOR(i, 0, x + 1)
+    int MIN = 0, MAX = 0;
+    FOR(i, 0, n)
     {
-        b = x - i;
-        if (2 * i + 4 * b == y)
-            ans = 1;
+        MAX = max(p[i], MAX);
+        if (p[i] > MIN)
+            cout << MIN << endl;
+        else
+        {
+            while (MIN <= MAX)
+            {
+                MIN++;
+            }
+            cout << MIN << endl;
+        }
     }
-    if (ans)
-        cout << "Yes\n";
-    else
-        cout << "No\n";
-
     return 0;
 }
+// 3\ 0 3 1

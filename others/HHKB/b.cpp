@@ -112,20 +112,37 @@ inline string reversed(const string &s)
 int main()
 {
     init();
-    int x, y, b;
-    cin >> x >> y;
-
-    bool ans = 0;
-    FOR(i, 0, x + 1)
+    int h, w;
+    cin >> h >> w;
+    VS s(h, "");
+    FOR(i, 0, h)
+    cin >> s[i];
+    int ans = 0;
+    FOR(i, 0, h)
     {
-        b = x - i;
-        if (2 * i + 4 * b == y)
-            ans = 1;
+        if (s[i][0] == s.empty())
+            break;
+        FOR(j, 0, w)
+        {
+            if (&s[i][j + 1] == NULL)
+                break;
+            if (s[i][j] == '.' && s[i][j + 1] == '.')
+                ans++;
+        }
     }
-    if (ans)
-        cout << "Yes\n";
-    else
-        cout << "No\n";
 
+    FOR(i, 0, h)
+    {
+        if (s[i][0] == s.empty())
+            break;
+        FOR(j, 0, w)
+        {
+            if (&s[i + 1][j] == NULL)
+                break;
+            if (s[i][j] == '.' && s[i + 1][j] == '.')
+                ans++;
+        }
+    }
+    cout << ans << endl;
     return 0;
 }

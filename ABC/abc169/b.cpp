@@ -109,23 +109,31 @@ inline string reversed(const string &s)
     return t;
 }
 
+constexpr ll MAX = 1000000000000000000;
+
 int main()
 {
     init();
-    int x, y, b;
-    cin >> x >> y;
+    int n;
+    cin >> n;
+    ll ans = 1;
+    VL ai(n, 0);
+    FOR(i, 0, n)
+    cin >> ai[i];
 
-    bool ans = 0;
-    FOR(i, 0, x + 1)
+    sort(ai.begin(), ai.end());
+
+    FOR(i, 0, n)
     {
-        b = x - i;
-        if (2 * i + 4 * b == y)
-            ans = 1;
+        ll test = ans * ai[i];
+        if (test > MAX)
+        {
+            cout << "-1\n";
+            return 0;
+        }
+        ans *= ai[i];
     }
-    if (ans)
-        cout << "Yes\n";
-    else
-        cout << "No\n";
+    cout << ans << endl;
 
     return 0;
 }

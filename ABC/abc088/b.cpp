@@ -112,20 +112,19 @@ inline string reversed(const string &s)
 int main()
 {
     init();
-    int x, y, b;
-    cin >> x >> y;
-
-    bool ans = 0;
-    FOR(i, 0, x + 1)
+    int n;
+    cin >> n;
+    VI a(n, 0);
+    FOR(i, 0, n) { cin >> a[i]; }
+    rSORT(a);
+    int alice = 0, bob = 0;
+    FOR(i, 0, n)
     {
-        b = x - i;
-        if (2 * i + 4 * b == y)
-            ans = 1;
+        if (i % 2 == 0)
+            alice += a[i];
+        else
+            bob += a[i];
     }
-    if (ans)
-        cout << "Yes\n";
-    else
-        cout << "No\n";
-
+    cout << alice - bob << endl;
     return 0;
 }

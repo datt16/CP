@@ -112,20 +112,50 @@ inline string reversed(const string &s)
 int main()
 {
     init();
-    int x, y, b;
-    cin >> x >> y;
+    int a, b, c;
+    cin >> a >> b >> c;
 
-    bool ans = 0;
-    FOR(i, 0, x + 1)
+    if (a == 5)
     {
-        b = x - i;
-        if (2 * i + 4 * b == y)
-            ans = 1;
+        if (b == 5)
+        {
+            if (c == 7)
+            {
+                cout << "YES\n";
+                return 0;
+            }
+            else
+                cout << "NO\n";
+        }
+        else if (b == 7)
+        {
+            if (c == 5)
+            {
+                cout << "YES\n";
+                return 0;
+            }
+            else
+                cout << "NO\n";
+        }
+        else
+            cout << "NO\n";
     }
-    if (ans)
-        cout << "Yes\n";
+    else if (a == 7)
+    {
+        if (b == 5)
+        {
+            if (c == 5)
+            {
+                cout << "YES\n";
+                return 0;
+            }
+            else
+                cout << "NO\n";
+        }
+        else
+            cout << "NO\n";
+    }
     else
-        cout << "No\n";
-
+        cout << "NO\n";
     return 0;
 }

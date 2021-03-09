@@ -112,20 +112,17 @@ inline string reversed(const string &s)
 int main()
 {
     init();
-    int x, y, b;
-    cin >> x >> y;
-
-    bool ans = 0;
-    FOR(i, 0, x + 1)
-    {
-        b = x - i;
-        if (2 * i + 4 * b == y)
-            ans = 1;
-    }
-    if (ans)
-        cout << "Yes\n";
+    VI d(7, 0), j(7, 0);
+    FOR(i, 0, 7)
+    cin >> d[i];
+    FOR(i, 0, 7)
+    cin >> j[i];
+    int ans = 0;
+    FOR(i, 0, 7)
+    if (d[i] >= j[i])
+        ans += d[i];
     else
-        cout << "No\n";
-
+        ans += j[i];
+    cout << ans << endl;
     return 0;
 }
